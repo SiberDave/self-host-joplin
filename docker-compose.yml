@@ -1,0 +1,22 @@
+version: "3"
+services:    
+  db:        
+    volumes:            
+      - ${PWD}/database/data:/var/lib/postgresql/data
+    restart: unless-stopped
+    ports:
+      - 25432:5432
+    container_name: joplin-db        
+    env_file:
+      - ${PWD}/.env-db
+    image: postgres:13
+  app:
+    container_name: joplin-server-app
+    ports:
+      - 8500:8500
+    restart: unless-stopped
+    depends_on:
+      - db
+    env_file:
+      - ${PWD}/.env-app
+    image: joplin/server:latest

@@ -1,0 +1,8 @@
+APP_BASE_URL=http://{ip_aplikasi}:{port_aplikasi}
+APP_PORT={port_aplikasi}
+DB_CLIENT=pg
+POSTGRES_PASSWORD={db_password}
+POSTGRES_DATABASE={db_name}
+POSTGRES_USER={db_user}
+POSTGRES_PORT=5432
+POSTGRES_HOST=db
